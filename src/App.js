@@ -1,5 +1,6 @@
 import { Country } from './components/Country';
 import { useState, useEffect } from 'react';
+import Header from './components/Header';
 
 function App() {
 
@@ -43,13 +44,16 @@ function App() {
     }
 
 
-    getCountryData('russia', 'china', 'france', 'germany', 'usa', 'australia', 'norway', 'mexico')
+    getCountryData('canada', 'france', 'germany', 'italy', 'usa', 'japan', 'united kingdom', 'russia')
 
   }, []);
 
 
   return (
     <div className="container">
+      <Header name='G7'>
+        <p style={{ fontSize: '1.5rem', color: '#000' }}>The Group of Seven is an inter-governmental political forum</p>
+      </Header>
       <Country setisLoading={setisLoading} items={items} />
 
     </div>
