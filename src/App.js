@@ -31,9 +31,10 @@ function App() {
           getJson(`https://restcountries.com/v2/name/${c8}`)
         ]);
 
-        console.log(country);
+
         setItems(country);
         setisLoading(false);
+
 
       } catch (err) {
         console.log(err);
@@ -44,21 +45,13 @@ function App() {
 
     getCountryData('russia', 'china', 'france', 'germany', 'usa', 'australia', 'norway', 'mexico')
 
-  });
+  }, []);
 
 
   return (
     <div className="container">
-      <section className="country__container">
-        <Country setisLoading={setisLoading} items={items} />
-        <Country />
-        <Country />
-        <Country />
-        <Country />
-        <Country />
-        <Country />
-        <Country />
-      </section>
+      <Country setisLoading={setisLoading} items={items} />
+
     </div>
   );
 }
