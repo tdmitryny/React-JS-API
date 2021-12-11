@@ -5,11 +5,13 @@ export function Country({ items, isLoading }) {
         <section className="country__container">
             {items.map((item, i) => (
                 <div key={i} className="country__box">
-                    <div className="country__flag-size">
-                        <img className="country__flag" src={item[0].flag} alt="country flag" />
-                    </div>
+
+                    <img className="country__flag" src={item[0].flag} alt="country flag" />
+
                     <div className="country__data" >
-                        <h3 className="country__name">{item[0].name}</h3>
+                        <div className="country__title">
+                            <h3 className="country__name">{item[0].name}</h3>
+                        </div>
                         <h4 className="country__region">{item[0].region}</h4>
                         <p className="country__row"><span>👫</span>{(+item[0].population / 1000000).toFixed(2)} people</p>
                         <p className="country__row"><span>🗣</span>{item[0].languages[0].name}</p>
